@@ -9,17 +9,18 @@
 int main() {
 
     umask(0000);
-    int fd = open("image.ppm", O_CREAT | O_TRUNC | O_WRONLY, 0644);
+    int fd = open("picmaker.ppm", O_CREAT | O_TRUNC | O_WRONLY, 0644);
 
     char line[50];
     snprintf(line, sizeof(line), "P3 500 500 255\n");
     write(fd, line, sizeof(line));
 
-    int row = 0;
-    int col = 0;
-    for(; row < 500; row++) {
-        for(; col < 500; col ++) {
-            snprintf(line, sizeof(line), "255 0 0\n");
+    int row;
+    int col;
+    for(row = 0; row < 500; row++) {
+        for(col = 0; col < 500; col++) {
+
+            snprintf(line, sizeof(line), "255 0 0  ");
             write(fd, line, sizeof(line));
         }
     }
