@@ -12,16 +12,19 @@ int main() {
     int fd = open("picmaker.ppm", O_CREAT | O_TRUNC | O_WRONLY, 0644);
 
     char line[50];
-    snprintf(line, sizeof(line), "P3 500 500 255\n");
-    write(fd, line, sizeof(line));
+    sprintf(line, "P3 500 500 255\n");
+    write(fd, line, strlen(line));
 
+    int r = 255;
+    int g = 0;
+    int b = 0;
     int row;
     int col;
     for(row = 0; row < 500; row++) {
         for(col = 0; col < 500; col++) {
 
-            snprintf(line, sizeof(line), "255 0 0  ");
-            write(fd, line, sizeof(line));
+            sprintf(line, "255 0 0 ");
+            write(fd, line, strlen(line));
         }
     }
 
