@@ -15,9 +15,6 @@ int main() {
     sprintf(line, "P3 500 500 255\n");
     write(fd, line, strlen(line));
 
-    int r = 255;
-    int g = 0;
-    int b = 0;
     int row;
     int col;
     for(row = 0; row < 500; row++) {
