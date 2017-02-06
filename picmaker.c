@@ -20,7 +20,7 @@ int main() {
     for(row = 0; row < 500; row++) {
         for(col = 0; col < 500; col++) {
 
-            sprintf(line, "255 0 0 ");
+            sprintf(line, "255 0 0\n");
             write(fd, line, strlen(line));
         }
     }
